@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    // var a = 10;
+    // alert(b); //没定义 在这个报错之后其他代码不会执行
+    // alert(window.b); //undefind， 这个得报错之后其他代码可以继续执行
+
+
+    function(){
+        var a = 10;
+            aa = 10;
+        var b = 10;
+        function x(){
+            b = 100;
+        };
+        x();
+    };
+    fn();
+    alert(window.a);  //没定义
+    alert(window.aa); //10
+    alert(window.b); // undefind
+
+    /*
+     * 某些时候 不太确定某一个全局变量是否存在的时候，又要去使用的话，我们可以用window.的形式这样子就不会报错，不会阻碍后面代码的执行
+     *作用域链中可以找到的话那就是改变变量的值(a,aa)。如果找不到那就是window.的样子(b)
+     */
+    /
+
+</script>
+</html>

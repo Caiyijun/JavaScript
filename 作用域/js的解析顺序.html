@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    // var a;
+    // alert(a); //undefind
+    // //解析顺序
+    // var a = 10;
+
+
+    // x(); //1
+    //
+    // function x(){
+    //     alert(1);
+    // };
+
+
+    // (function xx(){
+    //     alert(1)
+    // });
+    // xx;//报错，因为上面的xx函数是一个表达式，不能直接执行。
+
+
+    xxx; // 2
+    xxx(); //undefind
+    var  xxx = function(){
+        alert(2)
+    };
+    //定义了x  然后赋值了给到x  所以弹出2
+    xxx();
+
+    /**
+     * js的解析顺序
+     *
+     * 1、先看所有的定义
+     * var  变量名
+     * function 函数名(){}
+     */
+</script>
+</html>
