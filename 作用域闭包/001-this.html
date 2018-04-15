@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    #box{
+        width: 100px;
+        height: 100px;
+        background: pink;
+    }
+</style>
+<body>
+<div id="box"></div>
+<script>
+    // function a(){
+    //     console.log(this);
+    // }
+    // a();
+    //
+    // document.onclick = a;
+    // document.getElementById("box").onclick = a;
+
+    // a(); //指向window
+
+    // function x(){
+    //     a();  //windows
+    // };
+    // x(); //windows
+    //函数名加括号自执行也是指向windows
+
+
+    var oBox = document.getElementById("box");
+    oBox.a = function(){
+        console.log(this);
+    };
+    oBox.a(); //box
+
+    document.onclick = oBox.a;   //document   //事件函数  this指向都是触发该事件的对象
+    /***
+     * 函数里边才有的this  this指向是由函数执行的方式来决定的
+     *
+     * 1、函数名（）   所以函数中this指向window对象
+     * 2、事件函数 函数中的this指向触发事件的对象
+     *
+     * document.onclick = a;  调用了a   所以这个this  指向 document
+     *
+     * 3、对象.方法()   函数内部this指向该对象
+     *
+     *
+     * 函数名加
+     *
+     */
+</script>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    #box,#wrap{
+        margin-bottom: 20px;
+        height: 100px;
+        width: 100px;
+        background: pink;
+        transition: all 0.5s ease;
+    }
+</style>
+<body>
+<div id="box"></div>
+<div id="wrap"></div>
+<script>
+var oBox  = document.getElementById("box"),
+    oWrap  = document.getElementById("wrap");
+
+// oBox.onclick = function(){
+//     var a  = this;
+//     // eFn.call(a,100,200);
+//     eFn.apply(a,[100,200]);
+//     // eFn.apply(oBox,[100,200]); //这样子写会是闭包 有内存吧问题
+// };
+// oWrap.onclick = function(){
+//     var a = this;
+//     // eFn.call(a,82,59);
+//     eFn.apply(a,[82,59]);
+// }
+
+
+
+//bind  是被动执行 
+oWrap.onclick = eFn.bind(oBox,12,56);  //使用bind  这样子没有函数执行 不会有闭包的函数 不会有内存的问题
+
+
+function eFn(x,y){
+    this.style.width = x + 'px';
+    this.style.height = y + 'px';
+}
+
+oBox.h = function(){
+    console.log(this);
+}
+oBox.h.call(document);  //document
+oBox.h.call(Math);  //Math
+
+/**
+ * 当call/apply 第一个参数为null/undefind的时候  this指向window
+ *
+ */
+</script>
+</body>
+</html>

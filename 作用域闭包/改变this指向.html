@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    #box{
+        width: 100px;
+        height: 100px;
+        background: pink;
+    }
+</style>
+<body>
+<div id="box"></div>
+<script>
+    /**
+     * 改变this指向
+     * 1、call
+     * 在函数执行阶段改变this指向
+     * call的第一个参数代表函数的this指向
+     *原函数的第一个形参对呀call的第二位实参
+     * a.call(document)
+     *
+     * 2、apply
+     * 在函数执行阶段改变this指向
+     *apply的第一个参数代表函数的this指向
+     * apply第二个参数是一个数组，数组第一位是对应原函数第一个形参，以此类推
+     *
+     * 当call和apply的第一个参数是null和undefind的时候  this指向是window
+     * 3、bind
+     */
+    var oBox = document.getElementById("box");
+     function a(x,y){
+         console.log(x + y);
+         console.log(this);
+     };
+     // a.call(document,5,9);
+     a.apply(oBox,[5,9]);
+     //第一次执行指向document
+     // a();
+     a.call(document);
+     //第二次执行指向oBox
+     a.call('10 ');
+
+
+    /**
+     * 事件函数不能传参,
+     */
+</script>
+</body>
+</html>

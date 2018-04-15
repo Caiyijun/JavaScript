@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    /**
+     * bind  不支持ie8  以及 ie8 以下
+     * 在函数定义的时候改变this的指向
+     * bind 不会帮函数自执行
+     * bind('指向哪里',参数)
+     */
+
+     function a(x,y){
+        console.log(x + y);
+        console.log(this);
+    }//直接定义的时候 不能写bind
+
+    document.onclick = function(){
+        console.log(this);
+    }.bind(document);
+    //a();
+
+    document.onclick = a.bind(window,1,45);
+
+
+     function fn(x){
+         x();
+     }
+     fn( function(){
+         console.log(this);  //window
+     }.bind(Math));//  Math
+</script>
+</body>
+</html>
