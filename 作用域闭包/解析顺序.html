@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    var a = 10;
+    x();
+    function x(){
+        var b = 20;
+        alert(b);
+    }
+    alert(a);
+
+    /***
+     *全局作用域
+     * 1.定义
+     * var a = 10;
+     *x();
+     *function x(){
+     *   var b = 20;
+     *   alert(b);
+     *}
+     * alert(a);
+     *2.执行
+     * a = 10;
+     * x(); -----------新的作用域触发 ------------> 1. 定义
+     *                                                 var b;
+     *                                                 2、执行
+     *                                                 b = 20;
+     *                                                 alert(b); // 20
+     *   alert(a); // 10
+     *
+     */
+</script>
+</html>

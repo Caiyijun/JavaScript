@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    // var a = 10;
+    // x();
+    // function x(){
+    //     alert(a); // fundefind
+    //     var a = 20;
+    // }
+    // alert(a + '外面');
+
+
+
+    // a();
+    // function a(){
+    //     alert(x);
+    //     var x = 10;
+    // }
+    // alert(x); //报错 外部无法调用内部的
+
+
+    // function a(){
+    //     alert(1)
+    // }
+    // var a;
+    // alert(a);
+    /**
+     * 1、定义
+     * var a
+     * function X()
+     */
+
+    alert(a);  //undefind
+    var a = 10;
+    alert(a); // 10
+    function a(){
+        alert(20);
+    }
+    alert(a); //a() 代码块
+    var a = 30;
+    alert(a); // 30
+    function a(){
+        alert(40);
+    }
+    alert(a);  // a()  代码块
+
+    /**
+     * 定义
+     // * var a
+     // * function a(){alert(20);}
+     // * var a
+     *function a(){alert(40)}
+     * 定义了第四个 a  把第二个的a函数覆盖掉了。
+     * 定义走完之后最后就剩下最后一个函数a
+     *
+     * 2、执行
+     * 第一条执行是  alert(a);  因为上面定义之后剩下40 的函数体 所以这一条弹出 40  的函数体
+     *
+     * 第二条alert(a)  var a = 10   所以执行结果就是 10
+     * 第三条alert(a)  执行后也是 10
+     * 第四条 alert(a)  var a = 30  所以执行结果就是 30
+     * 最后一条 alert(a)  执行结果也是 30
+     */
+
+
+
+    
+</script>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var b = fn();
+    b();
+    b();
+    b();
+
+    function fn(){
+        var a = 20;
+        return function(){
+            a++;
+            alert(a);
+        }
+    }
+
+    /**
+     * var a  不会被回收
+     * 什么是闭包
+     * 当一个函数里边嵌套一个函数
+     * 内部函数引用了外部函数的参数或变量
+     * 那么这个参数/变量 不会被回收 这样子就形成了闭包
+     * 
+     */
+</script>
+
+</body>
+</html>
